@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F629B968-FA19-4918-A233-1A3E2326C9B6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MuaSamOnline</RootNamespace>
+    <AssemblyName>MuaSamOnline</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="BarcodeStandard, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BarcodeLib.2.4.0\lib\netstandard2.0\BarcodeStandard.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.4\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.4.3.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.4.3\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.5.0.2\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.5.0.1\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.5.0.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="zxing, Version=0.16.8.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.8\lib\net47\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.8.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.8\lib\net47\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ds.cs">
+      <DependentUpon>ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ds.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ListOfItems\Brand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListOfItems\Brand.Designer.cs">
+      <DependentUpon>Brand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListOfItems\DoiSongForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListOfItems\DoiSongForm.Designer.cs">
+      <DependentUpon>DoiSongForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListOfItems\HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListOfItems\HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListOfItems\TBCongNghe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListOfItems\TBCongNghe.Designer.cs">
+      <DependentUpon>TBCongNghe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListOfItems\TheThaoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListOfItems\TheThaoForm.Designer.cs">
+      <DependentUpon>TheThaoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListOfItems\ThoiTrangForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListOfItems\ThoiTrangForm.Designer.cs">
+      <DependentUpon>ThoiTrangForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListOfItems\ThucPhamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListOfItems\ThucPhamForm.Designer.cs">
+      <DependentUpon>ThucPhamForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BrandModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BrandModule.Designer.cs">
+      <DependentUpon>BrandModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBConnect.cs" />
+    <Compile Include="ListOfItems\GioHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListOfItems\GioHang.Designer.cs">
+      <DependentUpon>GioHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HubForm.Designer.cs">
+      <DependentUpon>HubForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DoiSongProducts\BangVietLCD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\DoiSongProducts\BangVietLCD.Designer.cs">
+      <DependentUpon>BangVietLCD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DoiSongProducts\BiaCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\DoiSongProducts\BiaCong.Designer.cs">
+      <DependentUpon>BiaCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DoiSongProducts\ButBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\DoiSongProducts\ButBi.Designer.cs">
+      <DependentUpon>ButBi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DoiSongProducts\GiayInMaVach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\DoiSongProducts\GiayInMaVach.Designer.cs">
+      <DependentUpon>GiayInMaVach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DoiSongProducts\HopBut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\DoiSongProducts\HopBut.Designer.cs">
+      <DependentUpon>HopBut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DoiSongProducts\MayTinhCasio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\DoiSongProducts\MayTinhCasio.Designer.cs">
+      <DependentUpon>MayTinhCasio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TBCongNgheProducts\BanPhimK15.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\TBCongNgheProducts\BanPhimK15.Designer.cs">
+      <DependentUpon>BanPhimK15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TBCongNgheProducts\DauDocThe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\TBCongNgheProducts\DauDocThe.Designer.cs">
+      <DependentUpon>DauDocThe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TBCongNgheProducts\DongHoThongMinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\TBCongNgheProducts\DongHoThongMinh.Designer.cs">
+      <DependentUpon>DongHoThongMinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TBCongNgheProducts\GiaDoDienThoai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\TBCongNgheProducts\GiaDoDienThoai.Designer.cs">
+      <DependentUpon>GiaDoDienThoai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TBCongNgheProducts\SacDuPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\TBCongNgheProducts\SacDuPhong.Designer.cs">
+      <DependentUpon>SacDuPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TBCongNgheProducts\TaiNgheKhongDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\TBCongNgheProducts\TaiNgheKhongDay.Designer.cs">
+      <DependentUpon>TaiNgheKhongDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TheThaoProducts\BaloTennis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\TheThaoProducts\BaloTennis.Designer.cs">
+      <DependentUpon>BaloTennis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TheThaoProducts\BaoTayTapGym.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\TheThaoProducts\BaoTayTapGym.Designer.cs">
+      <DependentUpon>BaoTayTapGym.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TheThaoProducts\KinhLan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\TheThaoProducts\KinhLan.Designer.cs">
+      <DependentUpon>KinhLan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TheThaoProducts\LeuCamTrai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\TheThaoProducts\LeuCamTrai.Designer.cs">
+      <DependentUpon>LeuCamTrai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TheThaoProducts\MayTapCoBung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\TheThaoProducts\MayTapCoBung.Designer.cs">
+      <DependentUpon>MayTapCoBung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TheThaoProducts\VotCauLong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\TheThaoProducts\VotCauLong.Designer.cs">
+      <DependentUpon>VotCauLong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ThoiTrangProducts\AoHoodieNu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ThoiTrangProducts\AoHoodieNu.Designer.cs">
+      <DependentUpon>AoHoodieNu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ThoiTrangProducts\AoKhoacNam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ThoiTrangProducts\AoKhoacNam.Designer.cs">
+      <DependentUpon>AoKhoacNam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ThoiTrangProducts\AoSoMiNam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ThoiTrangProducts\AoSoMiNam.Designer.cs">
+      <DependentUpon>AoSoMiNam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ThoiTrangProducts\AoThoiTrang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ThoiTrangProducts\AoThoiTrang.Designer.cs">
+      <DependentUpon>AoThoiTrang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ThoiTrangProducts\QuanCongSo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ThoiTrangProducts\QuanCongSo.Designer.cs">
+      <DependentUpon>QuanCongSo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ThoiTrangProducts\QuanTayNam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ThoiTrangProducts\QuanTayNam.Designer.cs">
+      <DependentUpon>QuanTayNam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ThucPhamProducts\CaHoUop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ThucPhamProducts\CaHoUop.Designer.cs">
+      <DependentUpon>CaHoUop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ThucPhamProducts\CheesePie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ThucPhamProducts\CheesePie.Designer.cs">
+      <DependentUpon>CheesePie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ThucPhamProducts\LuonCaHoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ThucPhamProducts\LuonCaHoi.Designer.cs">
+      <DependentUpon>LuonCaHoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ThucPhamProducts\NhoDenKhongHat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ThucPhamProducts\NhoDenKhongHat.Designer.cs">
+      <DependentUpon>NhoDenKhongHat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ThucPhamProducts\SalamiTieuDo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ThucPhamProducts\SalamiTieuDo.Designer.cs">
+      <DependentUpon>SalamiTieuDo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ThucPhamProducts\TomTheTuoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ThucPhamProducts\TomTheTuoi.Designer.cs">
+      <DependentUpon>TomTheTuoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReceiptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceiptForm.Designer.cs">
+      <DependentUpon>ReceiptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SanPhamMua.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="ListOfItems\Brand.resx">
+      <DependentUpon>Brand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListOfItems\DoiSongForm.resx">
+      <DependentUpon>DoiSongForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListOfItems\HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListOfItems\TBCongNghe.resx">
+      <DependentUpon>TBCongNghe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListOfItems\TheThaoForm.resx">
+      <DependentUpon>TheThaoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListOfItems\ThoiTrangForm.resx">
+      <DependentUpon>ThoiTrangForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListOfItems\ThucPhamForm.resx">
+      <DependentUpon>ThucPhamForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BrandModule.resx">
+      <DependentUpon>BrandModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListOfItems\GioHang.resx">
+      <DependentUpon>GioHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HubForm.resx">
+      <DependentUpon>HubForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\DoiSongProducts\BangVietLCD.resx">
+      <DependentUpon>BangVietLCD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\DoiSongProducts\BiaCong.resx">
+      <DependentUpon>BiaCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\DoiSongProducts\ButBi.resx">
+      <DependentUpon>ButBi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\DoiSongProducts\GiayInMaVach.resx">
+      <DependentUpon>GiayInMaVach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\DoiSongProducts\HopBut.resx">
+      <DependentUpon>HopBut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\DoiSongProducts\MayTinhCasio.resx">
+      <DependentUpon>MayTinhCasio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\TBCongNgheProducts\BanPhimK15.resx">
+      <DependentUpon>BanPhimK15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\TBCongNgheProducts\DauDocThe.resx">
+      <DependentUpon>DauDocThe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\TBCongNgheProducts\DongHoThongMinh.resx">
+      <DependentUpon>DongHoThongMinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\TBCongNgheProducts\GiaDoDienThoai.resx">
+      <DependentUpon>GiaDoDienThoai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\TBCongNgheProducts\SacDuPhong.resx">
+      <DependentUpon>SacDuPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\TBCongNgheProducts\TaiNgheKhongDay.resx">
+      <DependentUpon>TaiNgheKhongDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\TheThaoProducts\BaloTennis.resx">
+      <DependentUpon>BaloTennis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\TheThaoProducts\BaoTayTapGym.resx">
+      <DependentUpon>BaoTayTapGym.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\TheThaoProducts\KinhLan.resx">
+      <DependentUpon>KinhLan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\TheThaoProducts\LeuCamTrai.resx">
+      <DependentUpon>LeuCamTrai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\TheThaoProducts\MayTapCoBung.resx">
+      <DependentUpon>MayTapCoBung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\TheThaoProducts\VotCauLong.resx">
+      <DependentUpon>VotCauLong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ThoiTrangProducts\AoHoodieNu.resx">
+      <DependentUpon>AoHoodieNu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ThoiTrangProducts\AoKhoacNam.resx">
+      <DependentUpon>AoKhoacNam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ThoiTrangProducts\AoSoMiNam.resx">
+      <DependentUpon>AoSoMiNam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ThoiTrangProducts\AoThoiTrang.resx">
+      <DependentUpon>AoThoiTrang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ThoiTrangProducts\QuanCongSo.resx">
+      <DependentUpon>QuanCongSo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ThoiTrangProducts\QuanTayNam.resx">
+      <DependentUpon>QuanTayNam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ThucPhamProducts\CaHoUop.resx">
+      <DependentUpon>CaHoUop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ThucPhamProducts\CheesePie.resx">
+      <DependentUpon>CheesePie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ThucPhamProducts\LuonCaHoi.resx">
+      <DependentUpon>LuonCaHoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ThucPhamProducts\NhoDenKhongHat.resx">
+      <DependentUpon>NhoDenKhongHat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ThucPhamProducts\SalamiTieuDo.resx">
+      <DependentUpon>SalamiTieuDo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ThucPhamProducts\TomTheTuoi.resx">
+      <DependentUpon>TomTheTuoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ReceiptForm.resx">
+      <DependentUpon>ReceiptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <None Include="ds.xsc">
+      <DependentUpon>ds.xsd</DependentUpon>
+    </None>
+    <None Include="ds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ds.xss">
+      <DependentUpon>ds.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5c960d279d052399f335fe5827861aea %282%29.png" />
+    <None Include="Resources\2727b8ea23ca7544f21eae512ee72fee.png" />
+    <None Include="Resources\8112d6a5370f3343d302583cd5922064.png" />
+    <None Include="Resources\42572a61e3f21bf71fe95fbf2a06ab4c.png" />
+    <None Include="Resources\6257895adb737bf3677267a34996ef2a.png" />
+    <None Include="Resources\BaloTennis.png" />
+    <None Include="Resources\BangVietLCD.png" />
+    <None Include="Resources\BaoTayTapGym.png" />
+    <None Include="Resources\BiaCong.png" />
+    <None Include="Resources\ButBi.png" />
+    <None Include="Resources\ee3bb004cbbb9607d0ea6bfa257be317.png" />
+    <None Include="Resources\GiayIn.png" />
+    <None Include="Resources\HopBut2Tang.png" />
+    <None Include="Resources\KinhLan.png" />
+    <None Include="Resources\LeuCamTrai.png" />
+    <None Include="Resources\MayTapCoBung.png" />
+    <None Include="Resources\MayTinhCasio.png" />
+    <None Include="Resources\Screenshot 2022-04-18 225323.png" />
+    <None Include="Resources\Screenshot 2022-04-18 230150.png" />
+    <None Include="Resources\Screenshot 2022-04-18 230604.png" />
+    <None Include="Resources\Screenshot 2022-04-18 230758.png" />
+    <None Include="Resources\Screenshot 2022-04-18 231132.png" />
+    <None Include="Resources\Screenshot 2022-04-18 231346.png" />
+    <None Include="Resources\Screenshot 2022-04-19 091219.png" />
+    <None Include="Resources\Screenshot 2022-04-19 093238.png" />
+    <None Include="Resources\Screenshot 2022-04-19 093426.png" />
+    <None Include="Resources\Screenshot 2022-04-19 094350.png" />
+    <None Include="Resources\Screenshot 2022-04-19 102506.png" />
+    <None Include="Resources\Screenshot 2022-04-19 102605.png" />
+    <None Include="Resources\VotTennis.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

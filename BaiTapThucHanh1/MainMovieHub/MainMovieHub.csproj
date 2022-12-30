@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0FFB2AD9-266C-4D3F-82F8-2163C3D3C942}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MainMovieHub</RootNamespace>
+    <AssemblyName>MainMovieHub</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Hub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hub.Designer.cs">
+      <DependentUpon>Hub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieInfo\5cms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieInfo\5cms.Designer.cs">
+      <DependentUpon>5cms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieInfo\ASilentVoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieInfo\ASilentVoice.Designer.cs">
+      <DependentUpon>ASilentVoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieInfo\Cruella.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieInfo\Cruella.Designer.cs">
+      <DependentUpon>Cruella.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieInfo\CTVDober.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieInfo\CTVDober.Designer.cs">
+      <DependentUpon>CTVDober.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieInfo\H2TYD2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieInfo\H2TYD2.Designer.cs">
+      <DependentUpon>H2TYD2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieInfo\HotelT4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieInfo\HotelT4.Designer.cs">
+      <DependentUpon>HotelT4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieInfo\KungfuPanda2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieInfo\KungfuPanda2.Designer.cs">
+      <DependentUpon>KungfuPanda2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieInfo\Pachinko.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieInfo\Pachinko.Designer.cs">
+      <DependentUpon>Pachinko.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieInfo\RushHour2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieInfo\RushHour2.Designer.cs">
+      <DependentUpon>RushHour2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieInfo\SpidermanNWH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieInfo\SpidermanNWH.Designer.cs">
+      <DependentUpon>SpidermanNWH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieInfo\TheTuxedo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieInfo\TheTuxedo.Designer.cs">
+      <DependentUpon>TheTuxedo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieInfo\Up.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieInfo\Up.Designer.cs">
+      <DependentUpon>Up.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieTrailer\trailer5cms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieTrailer\trailer5cms.Designer.cs">
+      <DependentUpon>trailer5cms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieTrailer\trailerASilentVoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieTrailer\trailerASilentVoice.Designer.cs">
+      <DependentUpon>trailerASilentVoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieTrailer\trailerCruella.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieTrailer\trailerCruella.Designer.cs">
+      <DependentUpon>trailerCruella.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieTrailer\trailerCTVQS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieTrailer\trailerCTVQS.Designer.cs">
+      <DependentUpon>trailerCTVQS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieTrailer\trailerH2TYD2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieTrailer\trailerH2TYD2.Designer.cs">
+      <DependentUpon>trailerH2TYD2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieTrailer\trailerHotelT4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieTrailer\trailerHotelT4.Designer.cs">
+      <DependentUpon>trailerHotelT4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieTrailer\trailerKungfuPanda2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieTrailer\trailerKungfuPanda2.Designer.cs">
+      <DependentUpon>trailerKungfuPanda2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieTrailer\trailerPachinko.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieTrailer\trailerPachinko.Designer.cs">
+      <DependentUpon>trailerPachinko.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieTrailer\trailerRushHour2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieTrailer\trailerRushHour2.Designer.cs">
+      <DependentUpon>trailerRushHour2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieTrailer\trailerSpidermanNWH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieTrailer\trailerSpidermanNWH.Designer.cs">
+      <DependentUpon>trailerSpidermanNWH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieTrailer\trailerTheTuxedo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieTrailer\trailerTheTuxedo.Designer.cs">
+      <DependentUpon>trailerTheTuxedo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieTrailer\trailerUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieTrailer\trailerUp.Designer.cs">
+      <DependentUpon>trailerUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Hub.resx">
+      <DependentUpon>Hub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieInfo\5cms.resx">
+      <DependentUpon>5cms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieInfo\ASilentVoice.resx">
+      <DependentUpon>ASilentVoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieInfo\Cruella.resx">
+      <DependentUpon>Cruella.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieInfo\CTVDober.resx">
+      <DependentUpon>CTVDober.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieInfo\H2TYD2.resx">
+      <DependentUpon>H2TYD2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieInfo\HotelT4.resx">
+      <DependentUpon>HotelT4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieInfo\KungfuPanda2.resx">
+      <DependentUpon>KungfuPanda2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieInfo\Pachinko.resx">
+      <DependentUpon>Pachinko.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieInfo\RushHour2.resx">
+      <DependentUpon>RushHour2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieInfo\SpidermanNWH.resx">
+      <DependentUpon>SpidermanNWH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieInfo\TheTuxedo.resx">
+      <DependentUpon>TheTuxedo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieInfo\Up.resx">
+      <DependentUpon>Up.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieTrailer\trailer5cms.resx">
+      <DependentUpon>trailer5cms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieTrailer\trailerASilentVoice.resx">
+      <DependentUpon>trailerASilentVoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieTrailer\trailerCruella.resx">
+      <DependentUpon>trailerCruella.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieTrailer\trailerCTVQS.resx">
+      <DependentUpon>trailerCTVQS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieTrailer\trailerH2TYD2.resx">
+      <DependentUpon>trailerH2TYD2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieTrailer\trailerHotelT4.resx">
+      <DependentUpon>trailerHotelT4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieTrailer\trailerKungfuPanda2.resx">
+      <DependentUpon>trailerKungfuPanda2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieTrailer\trailerPachinko.resx">
+      <DependentUpon>trailerPachinko.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieTrailer\trailerRushHour2.resx">
+      <DependentUpon>trailerRushHour2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieTrailer\trailerSpidermanNWH.resx">
+      <DependentUpon>trailerSpidermanNWH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieTrailer\trailerTheTuxedo.resx">
+      <DependentUpon>trailerTheTuxedo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieTrailer\trailerUp.resx">
+      <DependentUpon>trailerUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\christmas-star-png-33907.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star-empty_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{881BD0EF-8569-4637-873A-70DE56279CB0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Main</RootNamespace>
+    <AssemblyName>Main</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnimalQuizzes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnimalQuizzes.Designer.cs">
+      <DependentUpon>AnimalQuizzes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBConnection.cs" />
+    <Compile Include="FruitQuizzes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FruitQuizzes.Designer.cs">
+      <DependentUpon>FruitQuizzes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HighScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HighScore.Designer.cs">
+      <DependentUpon>HighScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SportQuizzes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SportQuizzes.Designer.cs">
+      <DependentUpon>SportQuizzes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleQuizzes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleQuizzes.Designer.cs">
+      <DependentUpon>VehicleQuizzes.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AnimalQuizzes.resx">
+      <DependentUpon>AnimalQuizzes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FruitQuizzes.resx">
+      <DependentUpon>FruitQuizzes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HighScore.resx">
+      <DependentUpon>HighScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SportQuizzes.resx">
+      <DependentUpon>SportQuizzes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleQuizzes.resx">
+      <DependentUpon>VehicleQuizzes.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dolphin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\elephant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jellyfish.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monkey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\octopus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\owl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rabbit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\turtle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\whale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blueberries.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cherry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\durian.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grapes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kiwi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lemon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lovepik-coconut-png-image_401177697_wh1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mango.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peaches.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pineapple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\strawberry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\watermelon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bicycle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\helicopter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scooter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tractor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\train.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\truck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basketball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boxing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cycling.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gymnastics.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icehockey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skiing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\soccer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\surfing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\swimming.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tennis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volleyball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageedit_1_2626143276.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\voice_80px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mute_80px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bgmmusic.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="correct.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="incorrect.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
